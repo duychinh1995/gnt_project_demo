@@ -1,0 +1,37 @@
+<header class="header dark-bg">
+  <div class="toggle-nav">
+    <div class="icon-reorder tooltips" data-original-title="Toggle Navigation" data-placement="bottom">
+      <i class="icon_menu"></i>
+    </div>
+  </div>
+    <%= link_to admin_root_url, class: "logo" do %>
+      <%= t "layouts.admin.nice" %>
+      <span class="lite">
+        <%= t "layouts.admin.admin" %>
+      </span>
+    <% end %>
+  <div class="top-nav notification-row">
+    <ul class="nav pull-right top-menu">
+      <li class="dropdown">
+        <%= link_to "#", class: "dropdown-toggle", data: {toggle: :dropdown} do %>
+          <%= t "layouts.admin.information" %><b class="caret"></b>
+        <% end %>
+        <ul class="dropdown-menu extended logout">
+          <div class="log-arrow-up"></div>
+          <li class="eborder-top">
+            <%= link_to "#" do %>
+              <i class="icon_profile"></i>
+              <%= t "layouts.admin.my_profile" %>
+            <% end %>
+          </li>
+          <li>
+            <%= link_to logout_path, method: :delete do %>
+              <i class="icon_key_alt"></i>
+              <%= t "layouts.admin.log_out" %>
+            <% end %>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+</header>

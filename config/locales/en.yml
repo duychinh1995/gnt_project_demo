@@ -1,0 +1,321 @@
+# Files in the config/locales directory are used for internationalization
+# and are automatically loaded by Rails. If you want to use locales other
+# than English, add the necessary files in this directory.
+#
+# To use the locales, use `I18n.t`:
+#
+#     I18n.t 'hello'
+#
+# In views, this is aliased to just `t`:
+#
+#     <%= t('hello') %>
+#
+# To use a different locale, set it with `I18n.locale`:
+#
+#     I18n.locale = :es
+#
+# This would use the information in config/locales/es.yml.
+#
+# The following keys must be escaped otherwise they will not be retrieved by
+# the default I18n backend:
+#
+# true, false, on, off, yes, no
+#
+# Instead, surround them with single quotes.
+#
+# en:
+#   'true': 'foo'
+#
+# To learn more, please read the Rails Internationalization guide
+# available at http://guides.rubyonrails.org/i18n.html.
+
+en:
+  product_price: "$ %{price}"
+  hello: "Hello world"
+  controller:
+    application:
+      invalid_em_pas: "Invalid email/password combinatio11n"
+    users:
+      welcome: "Welcome to the Sample App!!"
+      users_not_exist: "User doesn't exist"
+      ple_log: "Please log in."
+      del_user: "User deleted"
+      del_user_fail: "User deleted fail"
+      up_profile: "Profile updated"
+      ple_check_mail: "Please check your email to activate your account"
+    account:
+      acc_active: "Account activated!"
+      inv_act_link: "Invalid activation link"
+    password:
+      reset_mail: "Email sent with password reset instructions"
+      found_mail: "Email address not found"
+      cant_empty: "can't be empty"
+      pass_reset: "Password has been reset."
+      pass_expired: "Password reset has expired."
+    products:
+      del_pro: "Product deleted"
+      del_pro_fail: "Product fail deleted"
+      pro_not_exist: "Product doesn't exist"
+      success: "Product updated"
+      imp_pro: "Products imported."
+      invalid_csv: "Invalid CSV file format."
+      purchase_history: "Purchase History"
+    session:
+      account_not: "Account not activated."
+      check_mail: "Check your email for the activation link."
+    orders:
+      order_not_exist: "Order doesn't exist"
+      success: "Order updated"
+      role: "You have not rules"
+      create_order_errror: "Create order error"
+      create_order_success: "Create order sucess"
+      order: "Order"
+      back_cart: "Back Your Cart"
+      change_profile: "Change Profile"
+      ordered: "Ordered"
+    category:
+      del_cate: "Category deleted"
+      del_cate_fail: "Category fail deleted"
+      cate_not_exist: "Category doesn't exist"
+      success: "Category updated"
+      list_cate: "List Category"
+      new_cate: "New Category"
+    carts:
+      add_to_cart: "Add to cart"
+      add_to_cart_sucess: "Added to Cart"
+      product_not_found: "Product not found"
+      cart: "Cart"
+      quantity: "Quantity"
+      name: "Name"
+      price: "Price"
+      up: "Up"
+      down: "Down"
+      plus: "Plus"
+      minus: "Minus"
+      del: "Delete Cart"
+      home: "Home"
+      checkout: "Checkout"
+      exist_product: "Exist of product in category"
+      del_up_cate: "Success delete and update category"
+      del_up_cate_fail: "Fail delete and update category"
+  model:
+    user:
+      pic_less_5: "should be less than 5MB"
+  layouts:
+    admin:
+      keyword: "Keyword"
+      add_book: "Add Book"
+      category: "Category"
+      list_order: "List order"
+      admin: "Admin"
+      list_product: "List Product"
+      list_cate: "List Category"
+      add_cate: "Add Category"
+      dashboard: "Dashboard"
+      home: "Home"
+      nice: "Nice"
+      information: "Information"
+      my_profile: "My Profile"
+      log_out: "Log Out"
+      free_bootstrap: "Free Bootstrap Templates"
+      bootstrapmade: "BootstrapMade"
+      by: " by "
+      order: "Order"
+      user: "Users"
+      product: "Product"
+    application:
+      book: "Book Store"
+    header:
+      book: "BookStore"
+      home: "Home"
+      help: "Help"
+      log_in: "Log in"
+      log_out: "Log out"
+      profile: "Profile"
+      setting: "Settings"
+      users: "Users"
+      account: "Account"
+      add_book: "Add Book"
+      category: "Category"
+      list_order: "List order"
+      admin: "Admin"
+      list_product: "List Product"
+      list_cate: "List Category"
+      add_cate: "Add Category"
+      submit: "submit"
+      search: "Search"
+    footer:
+      book: "Book Store"
+      the : "The"
+      by: "by"
+      by_name: "Hòa & Chinh"
+      about: "About"
+      contact: "Contact"
+      news: "News"
+  sessions:
+    new:
+      log_in: "Log in"
+      remember_me: "Remember me on this computer"
+      new_user: "New user?"
+      sign_up: "Sign up now!"
+  shared:
+    error:
+      form_errors: "The form contains %{count} errors"
+  static_pages:
+    about:
+      about: "About"
+    contact:
+      contact: "Contact"
+      contact_page: "contact page"
+      contact_book: "Contact the Ruby on Rails Tutorial about Book Store"
+    help:
+      help: "Help"
+    home:
+      welcome: "Welcome to Book Store"
+      home_page: "This is the home page for the"
+      book: "Book Store"
+      sample_app: "sample application."
+      sign_up: "Sign up now!"
+    users:
+      sign_up: "Sign up"
+      create_acc: "Create my account"
+  users:
+    edit:
+      up_acc: "Update your profile"
+      change: "change"
+      edit_user: "Edit user"
+      save: "Save changes"
+      male: "Male"
+      female: "Female"
+    user:
+      del: "delete"
+      sure: "You sure?"
+    index:
+      all_users: "All users"
+  password_reset:
+    edit:
+      re_pass: "Reset password"
+      up_pass: "Update password"
+    new:
+      forget_pass: "Forgot password"
+      sub: "Submit"
+  products:
+    form:
+      sub: "Submit"
+      select_cate: "Select a category"
+    edit:
+      edit_book: "Edit book"
+      sub: "Submit"
+    index:
+      book_cur: "There are no books currently in this categort"
+      import_file: "Import a CSV File"
+      import: "Import"
+    new:
+      new_book: "New Book"
+    show:
+      back: "Back"
+      edit: "Edit"
+      del: "Delete"
+      sure: "Are you sure?"
+      category: "Category:"
+      price: "Price:"
+      quantity: " | Quantity:"
+  filters:
+    show:
+      alphabet: "alphabet"
+      category: "category"
+      min_price: "min_price"
+      max_price: "max_price"
+      search: "Search"
+      not_found_product: "Not found product"
+  admin:
+    products:
+      index:
+        list_product: "List product"
+        id: "ID"
+        productname: "Productname"
+        category: "Category"
+        price: "Price"
+        status: "Status"
+        details: "Details"
+        del: "Delete"
+        not_found_products: "Not found products"
+    categories:
+      index:
+        id: "ID"
+        title: "Title"
+        status: "Status"
+        ids: "%{count}"
+        not_found_categories: "Not found categories"
+      new:
+        new_cate: "New Category"
+      edit:
+        list_cate: "List Category"
+        parent: "Parent"
+      show:
+        sel_cate: "Select orther Category"
+        del_continue: "Continue delete all product in category:"
+    orders:
+      index:
+        list_order: "List Order"
+        id: "ID"
+        username: "Username"
+        totalamount: "Totalamount"
+        status: "Status"
+        details: "Details"
+        total: "Total"
+      edit:
+        order_detail: "Order detail"
+        cus_info: "Customer information"
+        name: "Name: "
+        email: "Email: "
+        phone: "Phone: "
+        address: "Address: "
+        id: "ID"
+        productname: "Productname"
+        price: "Price"
+        quantity: "Quantity"
+        amount: "Amount"
+        totalamount: "Totalamount"
+        update: "Update"
+    users:
+      index:
+        id: "ID"
+        name: "Name"
+        gender: "Gender"
+        address: "Address"
+        phone: "Phone"
+        email: "Email"
+        not_found_users: "Not found users"
+        list_user: "List Users"
+  form:
+    email_label: "Email"
+    password_label: "Password"
+    pass_confirmation_label: "Password confirmation"
+    male: "Male"
+    female: "Female"
+    remember_label: "Remember"
+  activerecord:
+    attributes:
+      product:
+        productname: "Productname"
+        category: "Category"
+        author: "Author"
+        price: "Price"
+        discount: "Discount"
+        image: "Image"
+        onhand: "Onhand"
+        productcontent: "Productcontent"
+        status: "Status"
+      user:
+        name: "Name"
+        email: "Email"
+        password: "Password"
+        password_confirmation: "Confirmation"
+        address: "Address"
+        phone: "Phone"
+        gender: "Gender"
+        avartar: "Avartar"
+      order:
+        status: "Status"
+

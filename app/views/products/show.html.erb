@@ -1,0 +1,20 @@
+<div class="row">
+  <div class="col-md-4 product-show">
+    <%= image_tag @product.image.url %>
+    <div style="margin-top: 10px;">
+      <%= button_to t("controller.carts.add_to_cart"),
+        order_details_path(product_id: @product.id), class: "btn btn-danger" %>
+    </div>
+    <div style="margin-top: 5px;">
+      <%= button_to "Back Home", root_path, method: :get, class: "btn btn-success" %>
+    </div>
+  </div>
+  <div class="col-md-8">
+    <h1><%= @product.productname %></h1>
+    <h3><%= t "products.show.category" %><%= @product.category.title %></h3>
+    <span><%= t "products.show.price" %>
+      <%= @product.price %><%= t "products.show.quantity" %><%= @product.onhand %>
+    </span>
+    <p><%= @product.productcontent %></p>
+  </div>
+</div>

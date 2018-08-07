@@ -1,0 +1,13 @@
+<div class="col-md-3">
+  <tr>
+    <th scope="row"><%= product.id %></th>
+    <td><%= link_to product.productname, edit_admin_product_path(product.id) %></td>
+    <td><%= product.category_title %></td>
+    <td><%= t("product_price", price: product.price) %></td>
+    <td><%= product.status %></td>
+    <td>
+      <%= link_to t("orders.index.details"), edit_admin_product_path(product.id), method: :get, class: "btn btn-primary btn-rounded btn-sm my-0" %>
+      <%= link_to t("products.show.del"), admin_product_path(product.id), method: :delete, data: {confirm: t("products.show.sure")}, class: "btn btn-primary btn-rounded btn-sm my-0" %>
+    </td>
+  </tr>
+</div>

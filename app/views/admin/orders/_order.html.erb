@@ -1,0 +1,9 @@
+<tr>
+  <th scope="row"><%= order.id %></th>
+  <td><%= link_to order.user_name, order.user %></td>
+  <td><%= t "product_price", price: order.totalamount %></td>
+  <td><%= order.status %></td>
+  <td>
+    <%= link_to t("orders.index.details"), edit_admin_order_path(order.id), method: :get, class: "btn btn-primary btn-rounded btn-sm my-0" %>
+  </td>
+</tr>

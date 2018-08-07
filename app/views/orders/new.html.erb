@@ -1,0 +1,33 @@
+<% if logged_in? && !@cart.nil? %>
+  <div class="row">
+    <div class="col-md-6 col-md-offset-3">
+      <%= form_for @current_user do |f| %>
+        <%= f.label :name %>
+        <%= f.text_field :name, class: "form-control", disabled: true %>
+        <%= f.label :email %>
+        <%= f.email_field :email, class: "form-control", disabled: true %>
+        <%= f.label :address %>
+        <%= f.text_field :address, class: "form-control", disabled: true %>
+        <%= f.label :phone %>
+        <%= f.text_field :phone, class: "form-control", disabled: true %>
+      <% end %>
+    </div>
+    <%= link_to t("controller.orders.back_cart"), your_cart_path, method: :get, class: "btn btn-success" %>
+    <%= link_to t("controller.orders.change_profile"), edit_user_path(@current_user), class: "btn btn-warning" %>
+  </div>
+  <div class="row">
+      <div class="col-md-6 col-md-offset-3">
+    <%= form_for @order do |f| %>
+        <%= f.text_field :status, :value => t("controller.orders.ordered") , class: "form-control", type: "hidden" %>
+        <%= f.text_field :totalamount, :value => total, class: "form-control", type: "hidden" %>
+        <%= f.text_field :user_id, :value => @current_user.id, class: "form-control", type: "hidden" %>
+        <%= f.text_field :giftcode_id, :value => get_giftcode , class: "form-control", type: "hidden" %>
+        <%= f.submit t("controller.orders.order"), class: "btn btn-danger" %>
+      <% end %>
+    </div>
+  </div>
+<% else %>
+  <script type="text/javascript">
+    window.location.href="/login" 
+  </script>
+<% end %>

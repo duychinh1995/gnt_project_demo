@@ -1,0 +1,19 @@
+<% provide :title, t("sessions.new.log_in") %>
+<h1><%= t "sessions.new.log_in" %></h1>
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+    <%= form_for(:session, url: login_path) do |f| %>
+      <%= f.label t("form.email_label") %>
+      <%= f.email_field :email, class: "form-control" %>
+      <%= f.label t("form.password_label") %>
+      <%= link_to "(forgot password)", new_password_reset_path %>
+      <%= f.password_field :password, class: "form-control" %>
+      <%= f.label t("form.remember_label"), class: "checkbox inline" do %>
+        <%= f.check_box :remember_me %>
+        <span><%= t "sessions.new.remember_me" %></span>
+      <% end %>
+      <%= f.submit t("sessions.new.log_in"), class: "btn btn-primary" %>
+    <% end %>
+    <p><%= t "sessions.new.new_user" %> <%= link_to t("sessions.new.sign_up"), signup_path %></p>
+  </div>
+</div>

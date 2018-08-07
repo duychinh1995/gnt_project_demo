@@ -1,0 +1,35 @@
+<h1><%= t "admin.categories.edit.list_cate" %></h1>
+<div class="row">
+  <div class="col-lg-12">
+    <section class="panel">
+      <div class="nav search-row" id="top_menu">
+        <%= form_tag admin_categories_path, method: :get do %>
+          <%= text_field_tag :search, params[:search], class: "form-control sinput",
+            placeholder: t("layouts.admin.keyword") %>
+          <%= button_tag type: "submit", class: "btn btn-default", name: nil do %>
+            <%= content_tag :i, "", class: "fa fa-search" %>
+          <% end %>
+        <% end %>
+      </div>
+      <%= will_paginate @categories %>
+      <table class="table table-striped table-responsive-md btn-table">
+        <thead>
+          <tr>
+            <th><%= t ".id" %></th>
+            <th><%= t ".title" %></th>
+            <th><%= t ".status" %></th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+          <% if @categories && @categories.any? %>
+            <%= render @categories %>
+          <% else %>
+            <% flash[:danger] = t ".not_found_categories" %>
+          <% end %>
+        </tbody>
+      </table>
+        <%= will_paginate @categories %>
+    </section>
+  </div>
+</div>

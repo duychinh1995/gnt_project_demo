@@ -1,0 +1,54 @@
+<aside>
+  <div id="sidebar" class="nav-collapse ">
+    <ul class="sidebar-menu">
+      <li class="active">
+        <%= link_to admin_root_url do %>
+          <i class="icon_house_alt"></i>
+          <span><%= t "layouts.admin.dashboard" %></span>
+        <% end %>
+      </li>
+      <li class="sub-menu">
+        <%= link_to "javascript:;" do %>
+          <i class="icon_document_alt"></i>
+          <span><%= t "layouts.admin.category" %></span>
+          <span class="menu-arrow arrow_carrot-right"></span>
+        <% end %>
+        <ul class="sub">
+          <li>
+            <%= link_to t("layouts.admin.list_cate"), admin_categories_path %>
+          </li>
+          <li>
+            <%= link_to t("layouts.admin.add_cate"), new_admin_category_path %>
+          </li>
+        </ul>
+      </li>
+      <li class="sub-menu">
+        <%= link_to "javascript:;" do %>
+          <i class="icon_document_alt"></i>
+          <span><%= t "layouts.admin.product" %></span>
+          <span class="menu-arrow arrow_carrot-right"></span>
+        <% end %>
+        <ul class="sub">
+          <li>
+            <%= link_to t("layouts.admin.list_product"), admin_products_path %>
+          </li>
+          <li>
+            <%= link_to t("layouts.admin.add_book"), new_admin_product_path %>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <%= link_to admin_orders_path do %>
+          <i class="icon_document_alt"></i>
+          <span><%= t "layouts.admin.order" %></span>
+        <% end %>
+      </li>
+      <li>
+        <%= link_to admin_users_path do %>
+          <i class="icon_document_alt"></i>
+          <span><%= t "layouts.admin.user" %></span>
+        <% end %>
+      </li>
+    </ul>
+  </div>
+</aside>

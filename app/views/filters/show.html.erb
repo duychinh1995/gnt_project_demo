@@ -1,0 +1,38 @@
+<div class="row">
+  <div class="col-md-3">
+    <%= form_tag search_path, html:{class: "pure-form"}, method: :get do %>
+      <div class="filed">
+        <%= label_tag t "filters.show.alphabet" %><br />
+        <%= text_field_tag t("filters.show.alphabet"), nil, class: "form-control" %>
+      </div>
+      <div class="filed">
+        <%= label_tag t "filters.show.category" %><br />
+        <%= select_tag :category_id, options_for_select(@categories),
+          {class: "form-control",include_blank: true} %>
+      </div>
+      <div class="filed">
+        <p>
+          <%= label_tag t "filters.show.min_price"%>
+          <%= text_field_tag t("filters.show.min_price"), "",
+            size: Settings.size_text_field, class: "form-control" %>
+        </p>
+        <p>
+          <%= label_tag t "filters.show.max_price" %>
+          <%= text_field_tag t("filters.show.max_price"), "",
+            size: Settings.size_text_field, class: "form-control" %>
+        </p>
+      </div>
+      <div class="actions">
+        <%= submit_tag t("filters.show.search"), class: "pure-button pure-button-primary"%>
+      </div>
+    <% end %>
+  </div>
+  <div class="col-md-9">
+    <% if @products.any? %>
+      <%= render partial: "list_product", collection: @products, as: "product" %>
+    <% else %>
+      <p><%= t "filters.show.not_found_product" %></p>
+    <% end %>
+  </div>
+  <%= will_paginate @products %>
+</div>

@@ -1,0 +1,35 @@
+<%= form_for [:admin, @category] do |f| %>
+  <%= render "shared/error_messages", object: f.object %>
+  <div class="form-group">
+    <%= f.label :category, class: "col-sm-2 control-label" %>
+    <div class="col-sm-10">
+      <%= f.collection_select :parent_id, @categories, :id, :long_name,
+        {include_blank: t("admin.categories.edit.parent")},
+        {class: "form-control"} %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :title, class: "col-sm-2 control-label" %>
+    <div class="col-sm-10">
+      <%= f.text_field :title, class: "form-control" %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :catcontent, class: "col-sm-2 control-label" %>
+    <div class="col-sm-10">
+      <%= f.text_area :catcontent, size: Settings.size %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :status, class: "col-sm-2 control-label" %>
+    <div class="col-sm-10">
+      <%= f.select :status, options_for_select(Category.statuses.keys,
+        @category.status), {}, {class: "form-control"} %>
+    </div>
+  </div>
+  <div class="form-group">
+    <div class="col-lg-offset-2 col-lg-10">
+      <%= f.submit t("products.edit.sub"), class: "btn btn-primary" %>
+    </div>
+  </div>
+<% end %>

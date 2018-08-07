@@ -1,0 +1,8 @@
+<h1><%= params[:category] %></h1>
+<% if @products.count == 0 %>
+  <h1><%= t "products.index.book_cur" %></h1>
+<% else %>
+  <div class="row">
+    <%= render @products %>
+  </div>
+<% end %>

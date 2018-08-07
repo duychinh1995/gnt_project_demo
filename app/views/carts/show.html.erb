@@ -1,0 +1,32 @@
+<div class="btn-group btn-group-justified" style="padding-top: 50px;">
+  <div class="btn-group">
+    <button type="button" class="btn btn-default"><%= t("controller.carts.quantity") %></button>
+  </div>
+  <div class="btn-group">
+    <button type="button" class="btn btn-default"><%= t("controller.carts.name") %></button>
+  </div>
+  <div class="btn-group">
+    <button type="button" class="btn btn-default"><%= t("controller.carts.price") %></button>
+  </div>
+  <div class="btn-group">
+    <button type="button" class="btn btn-default"><%= t("controller.carts.up") %></button>
+  </div>
+  <div class="btn-group">
+    <button type="button" class="btn btn-default"><%= t("controller.carts.down") %></button>
+  </div>
+</div>
+
+<% if @cart %>
+  <%= render partial: "cart", collection: @products, as: :item %>
+  <ul class="list-group" style="margin-top: 20px; width: 400px; text-align: center">
+    <li class="list-group-item list-group-item-success"><%= t "orders.index.total" %></li>
+    <li class="list-group-item list-group-item-info"><%= total %></li>
+  </ul>
+<% end %>
+<div style="margin-top: 20px;">
+  <%= link_to t("controller.carts.home"), root_path, class: "btn btn-warning" %>
+  <% if total > 0 %>
+    <%= link_to t("controller.carts.checkout"), checkout_path, class: "btn btn-success" %>
+    <%= link_to t("controller.carts.del"), delete_cart_path, method: :delete, class: "btn btn-danger" %>
+  <% end %>
+</div>

@@ -1,0 +1,33 @@
+<% provide :title, t("users.edit.edit_user") %>
+<h1><%= t "users.edit.up_acc" %></h1>
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+    <%= form_for(@user) do |f| %>
+      <%= render "shared/error_messages", object: f.object %>
+      <%= f.label :name %>
+      <%= f.text_field :name, class: "form-control" %>
+      <%= f.label :email %>
+      <%= f.email_field :email, class: "form-control", :disabled => true %>
+      <%= f.label :password %>
+      <%= f.password_field :password, class: "form-control" %>
+      <%= f.label :password_confirmation %>
+      <%= f.password_field :password_confirmation, class: "form-control" %>
+      <%= f.label :address %>
+      <%= f.text_field :address, class: "form-control" %>
+      <%= f.label :phone %>
+      <%= f.text_field :phone, class: "form-control" %>
+      <%= f.radio_button :gender, "male", :checked => true, class: "form-control" %>
+      <%= label :gender, t("users.edit.male") %>
+      <%= f.radio_button :gender, "female", class: "form-control" %>
+      <%= label :gender, t("users.edit.female") %><br>
+      <%= f.label :avartar %>
+      <%= f.file_field :avartar, class: "form-control", accept: "image/jpeg,image/gif,image/png" %>
+      <%= image_tag @user.avartar.url if @user.avartar? %>
+      <%= f.submit t("users.edit.save"), class: "btn btn-primary" %>
+    <% end %>
+    <div class="gravatar_edit">
+      <%= gravatar_for @user %>
+      <a href="http://gravatar.com/emails" target="_blank"><%= t "users.edit.change" %></a>
+    </div>
+  </div>
+</div>

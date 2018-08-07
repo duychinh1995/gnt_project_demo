@@ -1,0 +1,6 @@
+<div class="col-md-4">
+  <%= link_to product_path(product), class: "products" do %>
+    <%= image_tag product.image.url %>
+  <% end %>
+  <span><%= product.productname %></span>
+</div>
